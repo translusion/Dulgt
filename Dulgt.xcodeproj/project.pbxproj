@@ -18,6 +18,8 @@
 		D5466E88192159B30031E7D9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E67192159B30031E7D9 /* Cocoa.framework */; };
 		D5466E90192159B30031E7D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5466E8E192159B30031E7D9 /* InfoPlist.strings */; };
 		D5466E92192159B40031E7D9 /* DulgtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E91192159B40031E7D9 /* DulgtTests.m */; };
+		D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */; };
+		D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466EA219216E500031E7D9 /* libscrypt.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,11 @@
 		D5466E8D192159B30031E7D9 /* DulgtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DulgtTests-Info.plist"; sourceTree = "<group>"; };
 		D5466E8F192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5466E91192159B40031E7D9 /* DulgtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DulgtTests.m; sourceTree = "<group>"; };
+		D5466E9B19215A6C0031E7D9 /* TLPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGenerator.h; path = Model/TLPasswordGenerator.h; sourceTree = "<group>"; };
+		D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPasswordGenerator.m; path = Model/TLPasswordGenerator.m; sourceTree = "<group>"; };
+		D5466EA119216E500031E7D9 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = b64.h; path = Libs/b64.h; sourceTree = "<group>"; };
+		D5466EA219216E500031E7D9 /* libscrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libscrypt.a; path = Libs/libscrypt.a; sourceTree = "<group>"; };
+		D5466EA319216E500031E7D9 /* libscrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libscrypt.h; path = Libs/libscrypt.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */,
 				D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +123,8 @@
 		D5466E6D192159B30031E7D9 /* Dulgt */ = {
 			isa = PBXGroup;
 			children = (
+				D5466E9F19216DC40031E7D9 /* Libs */,
+				D5466E9E19216DAF0031E7D9 /* Model */,
 				D5466E79192159B30031E7D9 /* TLAppDelegate.h */,
 				D5466E7A192159B30031E7D9 /* TLAppDelegate.m */,
 				D5466E7C192159B30031E7D9 /* MainMenu.xib */,
@@ -152,6 +162,25 @@
 				D5466E8E192159B30031E7D9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5466E9E19216DAF0031E7D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E9B19215A6C0031E7D9 /* TLPasswordGenerator.h */,
+				D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D5466E9F19216DC40031E7D9 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				D5466EA119216E500031E7D9 /* b64.h */,
+				D5466EA219216E500031E7D9 /* libscrypt.a */,
+				D5466EA319216E500031E7D9 /* libscrypt.h */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +284,7 @@
 			files = (
 				D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */,
 				D5466E74192159B30031E7D9 /* main.m in Sources */,
+				D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +420,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
 				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dulgt/Libs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +437,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
 				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dulgt/Libs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
