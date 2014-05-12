@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E67192159B30031E7D9 /* Cocoa.framework */; };
+		D5466E72192159B30031E7D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5466E70192159B30031E7D9 /* InfoPlist.strings */; };
+		D5466E74192159B30031E7D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E73192159B30031E7D9 /* main.m */; };
+		D5466E78192159B30031E7D9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D5466E76192159B30031E7D9 /* Credits.rtf */; };
+		D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E7A192159B30031E7D9 /* TLAppDelegate.m */; };
+		D5466E7E192159B30031E7D9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5466E7C192159B30031E7D9 /* MainMenu.xib */; };
+		D5466E80192159B30031E7D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5466E7F192159B30031E7D9 /* Images.xcassets */; };
+		D5466E87192159B30031E7D9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E86192159B30031E7D9 /* XCTest.framework */; };
+		D5466E88192159B30031E7D9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E67192159B30031E7D9 /* Cocoa.framework */; };
+		D5466E90192159B30031E7D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5466E8E192159B30031E7D9 /* InfoPlist.strings */; };
+		D5466E92192159B40031E7D9 /* DulgtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E91192159B40031E7D9 /* DulgtTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5466E89192159B30031E7D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5466E5C192159B30031E7D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5466E63192159B30031E7D9;
+			remoteInfo = Dulgt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5466E64192159B30031E7D9 /* Dulgt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulgt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5466E67192159B30031E7D9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D5466E6A192159B30031E7D9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D5466E6B192159B30031E7D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D5466E6C192159B30031E7D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D5466E6F192159B30031E7D9 /* Dulgt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dulgt-Info.plist"; sourceTree = "<group>"; };
+		D5466E71192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5466E73192159B30031E7D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5466E75192159B30031E7D9 /* Dulgt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dulgt-Prefix.pch"; sourceTree = "<group>"; };
+		D5466E77192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D5466E79192159B30031E7D9 /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
+		D5466E7A192159B30031E7D9 /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
+		D5466E7D192159B30031E7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D5466E7F192159B30031E7D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5466E85192159B30031E7D9 /* DulgtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DulgtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5466E86192159B30031E7D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D5466E8D192159B30031E7D9 /* DulgtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DulgtTests-Info.plist"; sourceTree = "<group>"; };
+		D5466E8F192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5466E91192159B40031E7D9 /* DulgtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DulgtTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5466E61192159B30031E7D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5466E82192159B30031E7D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E88192159B30031E7D9 /* Cocoa.framework in Frameworks */,
+				D5466E87192159B30031E7D9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5466E5B192159B30031E7D9 = {
+			isa = PBXGroup;
+			children = (
+				D5466E6D192159B30031E7D9 /* Dulgt */,
+				D5466E8B192159B30031E7D9 /* DulgtTests */,
+				D5466E66192159B30031E7D9 /* Frameworks */,
+				D5466E65192159B30031E7D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5466E65192159B30031E7D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E64192159B30031E7D9 /* Dulgt.app */,
+				D5466E85192159B30031E7D9 /* DulgtTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5466E66192159B30031E7D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E67192159B30031E7D9 /* Cocoa.framework */,
+				D5466E86192159B30031E7D9 /* XCTest.framework */,
+				D5466E69192159B30031E7D9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5466E69192159B30031E7D9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E6A192159B30031E7D9 /* AppKit.framework */,
+				D5466E6B192159B30031E7D9 /* CoreData.framework */,
+				D5466E6C192159B30031E7D9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D5466E6D192159B30031E7D9 /* Dulgt */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E79192159B30031E7D9 /* TLAppDelegate.h */,
+				D5466E7A192159B30031E7D9 /* TLAppDelegate.m */,
+				D5466E7C192159B30031E7D9 /* MainMenu.xib */,
+				D5466E7F192159B30031E7D9 /* Images.xcassets */,
+				D5466E6E192159B30031E7D9 /* Supporting Files */,
+			);
+			path = Dulgt;
+			sourceTree = "<group>";
+		};
+		D5466E6E192159B30031E7D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E6F192159B30031E7D9 /* Dulgt-Info.plist */,
+				D5466E70192159B30031E7D9 /* InfoPlist.strings */,
+				D5466E73192159B30031E7D9 /* main.m */,
+				D5466E75192159B30031E7D9 /* Dulgt-Prefix.pch */,
+				D5466E76192159B30031E7D9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5466E8B192159B30031E7D9 /* DulgtTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E91192159B40031E7D9 /* DulgtTests.m */,
+				D5466E8C192159B30031E7D9 /* Supporting Files */,
+			);
+			path = DulgtTests;
+			sourceTree = "<group>";
+		};
+		D5466E8C192159B30031E7D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5466E8D192159B30031E7D9 /* DulgtTests-Info.plist */,
+				D5466E8E192159B30031E7D9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5466E63192159B30031E7D9 /* Dulgt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Dulgt" */;
+			buildPhases = (
+				D5466E60192159B30031E7D9 /* Sources */,
+				D5466E61192159B30031E7D9 /* Frameworks */,
+				D5466E62192159B30031E7D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dulgt;
+			productName = Dulgt;
+			productReference = D5466E64192159B30031E7D9 /* Dulgt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5466E84192159B30031E7D9 /* DulgtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "DulgtTests" */;
+			buildPhases = (
+				D5466E81192159B30031E7D9 /* Sources */,
+				D5466E82192159B30031E7D9 /* Frameworks */,
+				D5466E83192159B30031E7D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5466E8A192159B30031E7D9 /* PBXTargetDependency */,
+			);
+			name = DulgtTests;
+			productName = DulgtTests;
+			productReference = D5466E85192159B30031E7D9 /* DulgtTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5466E5C192159B30031E7D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Erik Engheim";
+				TargetAttributes = {
+					D5466E84192159B30031E7D9 = {
+						TestTargetID = D5466E63192159B30031E7D9;
+					};
+				};
+			};
+			buildConfigurationList = D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Dulgt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5466E5B192159B30031E7D9;
+			productRefGroup = D5466E65192159B30031E7D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5466E63192159B30031E7D9 /* Dulgt */,
+				D5466E84192159B30031E7D9 /* DulgtTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5466E62192159B30031E7D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E72192159B30031E7D9 /* InfoPlist.strings in Resources */,
+				D5466E80192159B30031E7D9 /* Images.xcassets in Resources */,
+				D5466E78192159B30031E7D9 /* Credits.rtf in Resources */,
+				D5466E7E192159B30031E7D9 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5466E83192159B30031E7D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E90192159B30031E7D9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5466E60192159B30031E7D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */,
+				D5466E74192159B30031E7D9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5466E81192159B30031E7D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5466E92192159B40031E7D9 /* DulgtTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5466E8A192159B30031E7D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5466E63192159B30031E7D9 /* Dulgt */;
+			targetProxy = D5466E89192159B30031E7D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5466E70192159B30031E7D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5466E71192159B30031E7D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D5466E76192159B30031E7D9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5466E77192159B30031E7D9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D5466E7C192159B30031E7D9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5466E7D192159B30031E7D9 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D5466E8E192159B30031E7D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5466E8F192159B30031E7D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5466E93192159B40031E7D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D5466E94192159B40031E7D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D5466E96192159B40031E7D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D5466E97192159B40031E7D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D5466E99192159B40031E7D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dulgt.app/Contents/MacOS/Dulgt";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DulgtTests/DulgtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D5466E9A192159B40031E7D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dulgt.app/Contents/MacOS/Dulgt";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				INFOPLIST_FILE = "DulgtTests/DulgtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Dulgt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5466E93192159B40031E7D9 /* Debug */,
+				D5466E94192159B40031E7D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Dulgt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5466E96192159B40031E7D9 /* Debug */,
+				D5466E97192159B40031E7D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "DulgtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5466E99192159B40031E7D9 /* Debug */,
+				D5466E9A192159B40031E7D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5466E5C192159B30031E7D9 /* Project object */;
+}
