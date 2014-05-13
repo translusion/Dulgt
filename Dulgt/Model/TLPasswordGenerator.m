@@ -12,7 +12,7 @@
 #define b64_encode_len(A) ((A+2)/3 * 4 + 1)
 #define b64_decode_len(A) (A / 4 * 3 + 2)
 
-NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, int dklen) {
+NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen) {
     NSData *passdata = [passstr dataUsingEncoding:NSUTF8StringEncoding];
     NSData *salt = [saltstr dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -30,6 +30,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 
 - (instancetype)init
 {
+    // default settings for scrypt 2009
     return [self initWithN:16384 r:8 p:1];
 }
 
@@ -37,13 +38,19 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 {
     self = [super init];
     if (self) {
-        // default settings for scrypt 2009
         _N = N;
         _r = r;
-        _p = r;
+        _p = p;
         _length = 8;
     }
     return self;
+}
+
+- (NSString *)derivePasswordFrom:(NSString *)passwd salt:(NSString *)salt dklen:(NSUInteger)dklen {
+    NSData *digestdata = generatePassword(passwd, salt, _N, _r, _p, dklen);
+    NSString *derivepassword = [digestdata base64EncodedStringWithOptions:0];
+    
+    return derivepassword;
 }
 
 
@@ -56,10 +63,9 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
                                _length];
     int dklen = 8;
 
-    NSData *digestdata = generatePassword(finalpassword, _target, _N, _r, _p, dklen);
-    NSString *derivepassword = [digestdata base64EncodedStringWithOptions:0];
+    NSString *derivepassword = [self derivePasswordFrom:finalpassword salt:_target dklen:dklen];
     
-    int dlen = [derivepassword length];
+    NSUInteger dlen = [derivepassword length];
     int alt = b64_encode_len(_length);
     
     return derivepassword;

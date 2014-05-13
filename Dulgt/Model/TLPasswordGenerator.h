@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, int dklen);
+NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen);
 
 @interface TLPasswordGenerator : NSObject
 
 - (instancetype)init;
 - (instancetype)initWithN:(int)N r:(int)r p:(int)p;
+
+- (NSString *)derivePasswordFrom:(NSString *)passwd salt:(NSString *)salt dklen:(NSUInteger)dklen;
 
 @property (nonatomic, copy) NSString *username;
 
