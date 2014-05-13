@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, int dklen);
+
 @interface TLPasswordGenerator : NSObject
+
+- (instancetype)init;
+- (instancetype)initWithN:(int)N r:(int)r p:(int)p;
+
 @property (nonatomic, copy) NSString *username;
 
 /** Name of place to login to, e.g. Amazon, Yahoo */
@@ -28,5 +34,6 @@
 
 /** Base64 encoded hash of password which can be stored to later verify password correctness */
 @property (nonatomic, copy, readonly) NSString *fingerprint;
+
 
 @end

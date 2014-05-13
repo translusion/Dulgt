@@ -20,6 +20,7 @@
 		D5466E92192159B40031E7D9 /* DulgtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E91192159B40031E7D9 /* DulgtTests.m */; };
 		D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */; };
 		D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466EA219216E500031E7D9 /* libscrypt.a */; };
+		D5466EA71922A9780031E7D9 /* TLPasswordGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,9 @@
 		D5466E91192159B40031E7D9 /* DulgtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DulgtTests.m; sourceTree = "<group>"; };
 		D5466E9B19215A6C0031E7D9 /* TLPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGenerator.h; path = Model/TLPasswordGenerator.h; sourceTree = "<group>"; };
 		D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPasswordGenerator.m; path = Model/TLPasswordGenerator.m; sourceTree = "<group>"; };
-		D5466EA119216E500031E7D9 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = b64.h; path = Libs/b64.h; sourceTree = "<group>"; };
 		D5466EA219216E500031E7D9 /* libscrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libscrypt.a; path = Libs/libscrypt.a; sourceTree = "<group>"; };
 		D5466EA319216E500031E7D9 /* libscrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libscrypt.h; path = Libs/libscrypt.h; sourceTree = "<group>"; };
+		D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPasswordGeneratorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +152,7 @@
 			children = (
 				D5466E91192159B40031E7D9 /* DulgtTests.m */,
 				D5466E8C192159B30031E7D9 /* Supporting Files */,
+				D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */,
 			);
 			path = DulgtTests;
 			sourceTree = "<group>";
@@ -176,7 +178,6 @@
 		D5466E9F19216DC40031E7D9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				D5466EA119216E500031E7D9 /* b64.h */,
 				D5466EA219216E500031E7D9 /* libscrypt.a */,
 				D5466EA319216E500031E7D9 /* libscrypt.h */,
 			);
@@ -292,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5466EA71922A9780031E7D9 /* TLPasswordGeneratorTests.m in Sources */,
 				D5466E92192159B40031E7D9 /* DulgtTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
