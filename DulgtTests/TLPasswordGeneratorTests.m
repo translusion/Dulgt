@@ -108,4 +108,19 @@ static NSArray *expectedScryptOutput() {
     }
 }
 
+- (void)testBase64Length {
+    TLPasswordGenerator *generator = [[TLPasswordGenerator alloc] init];
+    generator.username = @"myself";
+    generator.masterpassword = @"youwouldneverguess";
+    generator.target = @"apple";
+    generator.pepper = @"notellin";
+    generator.series = 0;
+    
+    for (int i = 1; i <= 16; ++i) {
+        generator.length = i;
+        NSString *passwd = [generator derivedPassword];
+        XCTAssertEqual(generator.length, passwd.length, @"Generated password should be as long as we specified");
+    }
+}
+
 @end

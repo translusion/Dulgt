@@ -26,7 +26,10 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 @property (nonatomic, copy) NSString *masterpassword;
 
 /** A long secret which is time consuming to enter or possibly impossible to remember. Something one keeps written down e.g.*/
-@property (nonatomic, copy) NSString *secret;
+@property (nonatomic, copy) NSString *pepper;
+
+/** Defaults to 0. Increment by one when service requires you to make new password */
+@property (nonatomic, assign) int series;
 
 /** Desired length of generated password */
 @property (nonatomic, assign) int length;

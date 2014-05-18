@@ -41,6 +41,8 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
         _N = N;
         _r = r;
         _p = p;
+        
+        _series = 0;
         _length = 8;
     }
     return self;
@@ -59,16 +61,14 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
     NSString *finalpassword = [NSString stringWithFormat:@"%@ %@ %@ %d",
                                _username,
                                _masterpassword,
-                               _secret,
-                               _length];
-    int dklen = 8;
+                               _pepper,
+                               _series];
 
+    NSUInteger dklen = b64_decode_len(_length)+1;
     NSString *derivepassword = [self derivePasswordFrom:finalpassword salt:_target dklen:dklen];
     
-    NSUInteger dlen = [derivepassword length];
-    int alt = b64_encode_len(_length);
-    
-    return derivepassword;
+    NSString *result = [derivepassword substringToIndex:_length];
+    return result;
 }
 
 @end
