@@ -12,15 +12,18 @@
 #define b64_encode_len(A) ((A+2)/3 * 4 + 1)
 #define b64_decode_len(A) (A / 4 * 3 + 2)
 
+/** Resturn nil on failure otherwise a valid NSData object is returned */
 NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen) {
     NSData *passdata = [passstr dataUsingEncoding:NSUTF8StringEncoding];
     NSData *salt = [saltstr dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableData *digestdata = [NSMutableData dataWithLength:dklen];
-    libscrypt_scrypt([passdata bytes], [passdata length],
+    int status = libscrypt_scrypt([passdata bytes], [passdata length],
                      [salt bytes], [salt length],
                      N, r, p,
                      [digestdata mutableBytes], [digestdata length]);
+    if (status != 0)
+        return nil;
     return digestdata;
 }
 
@@ -48,8 +51,11 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
     return self;
 }
 
+/** Returns nil if failed to generate password */
 - (NSString *)derivePasswordFrom:(NSString *)passwd salt:(NSString *)salt dklen:(NSUInteger)dklen {
     NSData *digestdata = generatePassword(passwd, salt, _N, _r, _p, dklen);
+    if (digestdata == nil)
+        return nil;
     NSString *derivepassword = [digestdata base64EncodedStringWithOptions:0];
     
     return derivepassword;
@@ -66,7 +72,8 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 
     NSUInteger dklen = b64_decode_len(_length)+1;
     NSString *derivepassword = [self derivePasswordFrom:finalpassword salt:_target dklen:dklen];
-    
+    if (derivepassword == nil)
+        return nil;
     NSString *result = [derivepassword substringToIndex:_length];
     return result;
 }
