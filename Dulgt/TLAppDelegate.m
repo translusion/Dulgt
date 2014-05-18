@@ -7,12 +7,18 @@
 //
 
 #import "TLAppDelegate.h"
+#import "TLPasswordGeneratorController.h"
 
-@implementation TLAppDelegate
+@implementation TLAppDelegate {
+    TLPasswordGeneratorController *_passwdGeneratorController;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    _passwdGeneratorController = [[TLPasswordGeneratorController alloc] init];
+
+    [[_passwdGeneratorController window] makeKeyAndOrderFront:self];
 }
+
 
 @end

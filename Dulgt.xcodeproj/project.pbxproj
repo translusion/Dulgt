@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50C724E192909A0001D3B15 /* TLPasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */; };
+		D50C7251192957D3001D3B15 /* TLPasswordGeneratorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */; };
 		D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E67192159B30031E7D9 /* Cocoa.framework */; };
 		D5466E72192159B30031E7D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5466E70192159B30031E7D9 /* InfoPlist.strings */; };
 		D5466E74192159B30031E7D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E73192159B30031E7D9 /* main.m */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D50C724C192909A0001D3B15 /* TLPasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGeneratorController.h; path = Controller/TLPasswordGeneratorController.h; sourceTree = "<group>"; };
+		D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPasswordGeneratorController.m; path = Controller/TLPasswordGeneratorController.m; sourceTree = "<group>"; };
+		D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLPasswordGeneratorWindow.xib; sourceTree = "<group>"; };
 		D5466E64192159B30031E7D9 /* Dulgt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulgt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5466E67192159B30031E7D9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D5466E6A192159B30031E7D9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -82,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D50C724F192909DB001D3B15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D50C724C192909A0001D3B15 /* TLPasswordGeneratorController.h */,
+				D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		D5466E5B192159B30031E7D9 = {
 			isa = PBXGroup;
 			children = (
@@ -124,11 +138,13 @@
 		D5466E6D192159B30031E7D9 /* Dulgt */ = {
 			isa = PBXGroup;
 			children = (
+				D5466E7C192159B30031E7D9 /* MainMenu.xib */,
+				D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */,
 				D5466E9F19216DC40031E7D9 /* Libs */,
+				D50C724F192909DB001D3B15 /* Controller */,
 				D5466E9E19216DAF0031E7D9 /* Model */,
 				D5466E79192159B30031E7D9 /* TLAppDelegate.h */,
 				D5466E7A192159B30031E7D9 /* TLAppDelegate.m */,
-				D5466E7C192159B30031E7D9 /* MainMenu.xib */,
 				D5466E7F192159B30031E7D9 /* Images.xcassets */,
 				D5466E6E192159B30031E7D9 /* Supporting Files */,
 			);
@@ -264,6 +280,7 @@
 				D5466E72192159B30031E7D9 /* InfoPlist.strings in Resources */,
 				D5466E80192159B30031E7D9 /* Images.xcassets in Resources */,
 				D5466E78192159B30031E7D9 /* Credits.rtf in Resources */,
+				D50C7251192957D3001D3B15 /* TLPasswordGeneratorWindow.xib in Resources */,
 				D5466E7E192159B30031E7D9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50C724E192909A0001D3B15 /* TLPasswordGeneratorController.m in Sources */,
 				D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */,
 				D5466E74192159B30031E7D9 /* main.m in Sources */,
 				D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */,
@@ -507,6 +525,7 @@
 				D5466E97192159B40031E7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "DulgtTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +534,7 @@
 				D5466E9A192159B40031E7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
