@@ -23,6 +23,7 @@
 		D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466E9C19215A6C0031E7D9 /* TLPasswordGenerator.m */; };
 		D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466EA219216E500031E7D9 /* libscrypt.a */; };
 		D5466EA71922A9780031E7D9 /* TLPasswordGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */; };
+		D5B9A72F192BE5BA003F73D4 /* KSPasswordField.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		D5466EA219216E500031E7D9 /* libscrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libscrypt.a; path = Libs/libscrypt.a; sourceTree = "<group>"; };
 		D5466EA319216E500031E7D9 /* libscrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libscrypt.h; path = Libs/libscrypt.h; sourceTree = "<group>"; };
 		D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPasswordGeneratorTests.m; sourceTree = "<group>"; };
+		D5B9A72D192BE5BA003F73D4 /* KSPasswordField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSPasswordField.h; path = Libs/KSPasswordField.h; sourceTree = "<group>"; };
+		D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSPasswordField.m; path = Libs/KSPasswordField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 		D5466E9F19216DC40031E7D9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D5B9A72D192BE5BA003F73D4 /* KSPasswordField.h */,
+				D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */,
 				D5466EA219216E500031E7D9 /* libscrypt.a */,
 				D5466EA319216E500031E7D9 /* libscrypt.h */,
 			);
@@ -302,6 +307,7 @@
 			files = (
 				D50C724E192909A0001D3B15 /* TLPasswordGeneratorController.m in Sources */,
 				D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */,
+				D5B9A72F192BE5BA003F73D4 /* KSPasswordField.m in Sources */,
 				D5466E74192159B30031E7D9 /* main.m in Sources */,
 				D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */,
 			);
