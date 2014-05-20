@@ -8,12 +8,15 @@
 
 #import "TLPasswordGeneratorController.h"
 #import "TLPasswordGenerator.h"
+#import "KSPasswordField.h"
 
 @interface TLPasswordGeneratorController ()
 @property (weak) IBOutlet NSTextField *derivedPassword;
-@property (unsafe_unretained) IBOutlet NSWindow *secretsWindow;
-@property (weak) IBOutlet NSTextField *masterpassword;
-@property (weak) IBOutlet NSTextField *secret;
+@property (weak) IBOutlet NSWindow *secretsWindow;
+@property (weak) IBOutlet NSWindow *masterpasswordWindow;
+@property (weak) IBOutlet KSPasswordField *masterpassword;
+@property (weak) IBOutlet KSPasswordField *secret;
+@property (weak) IBOutlet KSPasswordField *singleMasterpassword;
 
 @property (weak) IBOutlet NSComboBox *login;
 @property (weak) IBOutlet NSComboBox *target;
@@ -42,29 +45,55 @@
     _seriesStepper.integerValue = _model.series;
     _seriesLabel.integerValue   = _model.series;
     
-    
-    [NSApp beginSheet:_secretsWindow
-       modalForWindow:self.window
-        modalDelegate:self
-       didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:)
-          contextInfo:NULL];
+    [self changePasswordAndSecret:nil];
 }
 
-- (void)sheetDidEnd:(NSWindow *)sheet
+- (void)secretsSheetDidEnd:(NSWindow *)sheet
          returnCode:(NSInteger)returnCode
         contextInfo:(void *)contextInfo {
-    _model.pepper = [_secret stringValue];
-    _model.masterpassword = [_masterpassword stringValue];
+    _model.pepper = _secret.stringValue;
+    _model.masterpassword = _masterpassword.stringValue;
     
     // want to make sure we are not accidentally leaving secrets for
     // for some uninted to copy
-    _model.pepper = @"";
-    _model.masterpassword = @"";
+    _secret.stringValue = @"";
+    _masterpassword.stringValue = @"";
+}
+
+- (void)masterpasswordSheetDidEnd:(NSWindow *)sheet
+         returnCode:(NSInteger)returnCode
+        contextInfo:(void *)contextInfo {
+    _model.masterpassword = _singleMasterpassword.stringValue;
+    
+    // want to make sure we are not accidentally leaving secrets for
+    // for some uninted to copy
+    _singleMasterpassword.stringValue = @"";
+}
+
+- (IBAction)changePasswordAndSecret:(id)sender {
+    [NSApp beginSheet:_secretsWindow
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(secretsSheetDidEnd:returnCode:contextInfo:)
+          contextInfo:NULL];
 }
 
 - (IBAction)endSecretsWindow:(id)sender {
     [_secretsWindow orderOut:sender];
     [NSApp endSheet:_secretsWindow returnCode:1];
+}
+
+- (IBAction)endPasswordWindow:(id)sender {
+    [_masterpasswordWindow orderOut:sender];
+    [NSApp endSheet:_masterpasswordWindow returnCode:1];
+}
+
+- (IBAction)changePassword:(id)sender {
+    [NSApp beginSheet:_masterpasswordWindow
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(masterpasswordSheetDidEnd:returnCode:contextInfo:)
+          contextInfo:NULL];
 }
 
 - (IBAction)passwdLengthChanged:(NSSlider*)sender {
@@ -82,8 +111,13 @@
     _model.series = (int)_seriesLabel.integerValue;
     
     NSString *passwd = [_model derivedPassword];
-    if (passwd)
+    if (passwd) {
         [self.derivedPassword setStringValue: passwd];
+        NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+        [pasteboard clearContents];
+        NSArray *objectsToCopy = @[passwd];
+        [pasteboard writeObjects:objectsToCopy];
+    }
 }
 
 - (void)dealloc
