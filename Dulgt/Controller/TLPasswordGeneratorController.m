@@ -24,7 +24,9 @@
 
 @end
 
-@implementation TLPasswordGeneratorController
+@implementation TLPasswordGeneratorController {
+    NSMutableArray *_logins;
+}
 
 - (instancetype)init
 {
@@ -33,6 +35,7 @@
         _model = [[TLPasswordGenerator alloc] init];
         _secretEncrypted = NO;
         _showSecret = NO;
+        _logins = [[NSMutableArray alloc] initWithCapacity:20];
     }
     return self;
 }
@@ -102,6 +105,7 @@
     
     TLLogin *login = [_model derivedPassword];
     if (login) {
+        [_logins addObject:login];
         [self.derivedPassword setStringValue: login.password];
         NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
         [pasteboard clearContents];
