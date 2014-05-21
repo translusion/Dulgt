@@ -20,5 +20,9 @@
     [[_passwdGeneratorController window] makeKeyAndOrderFront:self];
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
 
 @end
