@@ -10,6 +10,13 @@
 
 NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen);
 
+@interface TLLogin : NSObject
+@property (nonatomic, copy, readonly) NSString *username;
+@property (nonatomic, copy, readonly) NSString *target;
+@property (nonatomic, assign, readonly) int length;
+@end
+
+
 @interface TLPasswordGenerator : NSObject
 
 - (instancetype)init;

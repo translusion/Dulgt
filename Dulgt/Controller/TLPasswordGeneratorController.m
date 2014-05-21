@@ -21,9 +21,9 @@
 @property (weak) IBOutlet NSComboBox *login;
 @property (weak) IBOutlet NSComboBox *target;
 @property (weak) IBOutlet NSSlider *lengthSlider;
-@property (weak) IBOutlet NSTextField *lengthLabel;
+@property (weak) IBOutlet NSTextField *lengthField;
 @property (weak) IBOutlet NSStepper *seriesStepper;
-@property (weak) IBOutlet NSTextField *seriesLabel;
+@property (weak) IBOutlet NSTextField *seriesField;
 @property (weak) IBOutlet NSButton *generateButton;
 
 @end
@@ -41,9 +41,9 @@
 
 - (void)windowDidLoad {
     _lengthSlider.integerValue  = _model.length;
-    _lengthLabel.integerValue   = _model.length;
+    _lengthField.integerValue   = _model.length;
     _seriesStepper.integerValue = _model.series;
-    _seriesLabel.integerValue   = _model.series;
+    _seriesField.integerValue   = _model.series;
     
     [self changePasswordAndSecret:nil];
 }
@@ -97,18 +97,18 @@
 }
 
 - (IBAction)passwdLengthChanged:(NSSlider*)sender {
-    _lengthLabel.integerValue = sender.integerValue;
+    _lengthField.integerValue = sender.integerValue;
 }
 
 - (IBAction)seriesChanged:(NSStepper *)sender {
-    _seriesLabel.integerValue = sender.integerValue;
+    _seriesField.integerValue = sender.integerValue;
 }
 
 - (IBAction)generatePassword:(id)sender {
     _model.username = _login.stringValue;
     _model.target = _target.stringValue;
-    _model.length = (int)_lengthLabel.integerValue;
-    _model.series = (int)_seriesLabel.integerValue;
+    _model.length = (int)_lengthField.integerValue;
+    _model.series = (int)_seriesField.integerValue;
     
     NSString *passwd = [_model derivedPassword];
     if (passwd) {

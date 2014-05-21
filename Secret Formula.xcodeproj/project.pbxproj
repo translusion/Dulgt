@@ -24,6 +24,7 @@
 		D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466EA219216E500031E7D9 /* libscrypt.a */; };
 		D5466EA71922A9780031E7D9 /* TLPasswordGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */; };
 		D5B9A72F192BE5BA003F73D4 /* KSPasswordField.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */; };
+		D5B9A731192CA442003F73D4 /* poison.icns in Resources */ = {isa = PBXBuildFile; fileRef = D5B9A730192CA442003F73D4 /* poison.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,23 +41,23 @@
 		D50C724C192909A0001D3B15 /* TLPasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGeneratorController.h; path = Controller/TLPasswordGeneratorController.h; sourceTree = "<group>"; };
 		D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPasswordGeneratorController.m; path = Controller/TLPasswordGeneratorController.m; sourceTree = "<group>"; };
 		D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLPasswordGeneratorWindow.xib; sourceTree = "<group>"; };
-		D5466E64192159B30031E7D9 /* Dulgt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulgt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5466E64192159B30031E7D9 /* Secret Formula.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Secret Formula.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5466E67192159B30031E7D9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D5466E6A192159B30031E7D9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D5466E6B192159B30031E7D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D5466E6C192159B30031E7D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D5466E6F192159B30031E7D9 /* Dulgt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dulgt-Info.plist"; sourceTree = "<group>"; };
+		D5466E6F192159B30031E7D9 /* Secret Formula-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secret Formula-Info.plist"; sourceTree = "<group>"; };
 		D5466E71192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5466E73192159B30031E7D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D5466E75192159B30031E7D9 /* Dulgt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dulgt-Prefix.pch"; sourceTree = "<group>"; };
+		D5466E75192159B30031E7D9 /* Secret Formula-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Secret Formula-Prefix.pch"; sourceTree = "<group>"; };
 		D5466E77192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D5466E79192159B30031E7D9 /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
 		D5466E7A192159B30031E7D9 /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
 		D5466E7D192159B30031E7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D5466E7F192159B30031E7D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D5466E85192159B30031E7D9 /* DulgtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DulgtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5466E85192159B30031E7D9 /* Secret FormulaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Secret FormulaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5466E86192159B30031E7D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D5466E8D192159B30031E7D9 /* DulgtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DulgtTests-Info.plist"; sourceTree = "<group>"; };
+		D5466E8D192159B30031E7D9 /* Secret FormulaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Secret FormulaTests-Info.plist"; sourceTree = "<group>"; };
 		D5466E8F192159B30031E7D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5466E91192159B40031E7D9 /* DulgtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DulgtTests.m; sourceTree = "<group>"; };
 		D5466E9B19215A6C0031E7D9 /* TLPasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGenerator.h; path = Model/TLPasswordGenerator.h; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		D5466EA61922A9780031E7D9 /* TLPasswordGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPasswordGeneratorTests.m; sourceTree = "<group>"; };
 		D5B9A72D192BE5BA003F73D4 /* KSPasswordField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSPasswordField.h; path = Libs/KSPasswordField.h; sourceTree = "<group>"; };
 		D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSPasswordField.m; path = Libs/KSPasswordField.m; sourceTree = "<group>"; };
+		D5B9A730192CA442003F73D4 /* poison.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = poison.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		D5466E5B192159B30031E7D9 = {
 			isa = PBXGroup;
 			children = (
+				D5B9A730192CA442003F73D4 /* poison.icns */,
 				D5466E6D192159B30031E7D9 /* Dulgt */,
 				D5466E8B192159B30031E7D9 /* DulgtTests */,
 				D5466E66192159B30031E7D9 /* Frameworks */,
@@ -112,8 +115,8 @@
 		D5466E65192159B30031E7D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5466E64192159B30031E7D9 /* Dulgt.app */,
-				D5466E85192159B30031E7D9 /* DulgtTests.xctest */,
+				D5466E64192159B30031E7D9 /* Secret Formula.app */,
+				D5466E85192159B30031E7D9 /* Secret FormulaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,10 +160,10 @@
 		D5466E6E192159B30031E7D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D5466E6F192159B30031E7D9 /* Dulgt-Info.plist */,
+				D5466E6F192159B30031E7D9 /* Secret Formula-Info.plist */,
 				D5466E70192159B30031E7D9 /* InfoPlist.strings */,
 				D5466E73192159B30031E7D9 /* main.m */,
-				D5466E75192159B30031E7D9 /* Dulgt-Prefix.pch */,
+				D5466E75192159B30031E7D9 /* Secret Formula-Prefix.pch */,
 				D5466E76192159B30031E7D9 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -179,7 +182,7 @@
 		D5466E8C192159B30031E7D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D5466E8D192159B30031E7D9 /* DulgtTests-Info.plist */,
+				D5466E8D192159B30031E7D9 /* Secret FormulaTests-Info.plist */,
 				D5466E8E192159B30031E7D9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -208,9 +211,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D5466E63192159B30031E7D9 /* Dulgt */ = {
+		D5466E63192159B30031E7D9 /* Secret Formula */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Dulgt" */;
+			buildConfigurationList = D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Secret Formula" */;
 			buildPhases = (
 				D5466E60192159B30031E7D9 /* Sources */,
 				D5466E61192159B30031E7D9 /* Frameworks */,
@@ -220,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = Dulgt;
+			name = "Secret Formula";
 			productName = Dulgt;
-			productReference = D5466E64192159B30031E7D9 /* Dulgt.app */;
+			productReference = D5466E64192159B30031E7D9 /* Secret Formula.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D5466E84192159B30031E7D9 /* DulgtTests */ = {
+		D5466E84192159B30031E7D9 /* Secret FormulaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "DulgtTests" */;
+			buildConfigurationList = D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Secret FormulaTests" */;
 			buildPhases = (
 				D5466E81192159B30031E7D9 /* Sources */,
 				D5466E82192159B30031E7D9 /* Frameworks */,
@@ -238,9 +241,9 @@
 			dependencies = (
 				D5466E8A192159B30031E7D9 /* PBXTargetDependency */,
 			);
-			name = DulgtTests;
+			name = "Secret FormulaTests";
 			productName = DulgtTests;
-			productReference = D5466E85192159B30031E7D9 /* DulgtTests.xctest */;
+			productReference = D5466E85192159B30031E7D9 /* Secret FormulaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Dulgt" */;
+			buildConfigurationList = D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Secret Formula" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -271,8 +274,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5466E63192159B30031E7D9 /* Dulgt */,
-				D5466E84192159B30031E7D9 /* DulgtTests */,
+				D5466E63192159B30031E7D9 /* Secret Formula */,
+				D5466E84192159B30031E7D9 /* Secret FormulaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B9A731192CA442003F73D4 /* poison.icns in Resources */,
 				D5466E72192159B30031E7D9 /* InfoPlist.strings in Resources */,
 				D5466E80192159B30031E7D9 /* Images.xcassets in Resources */,
 				D5466E78192159B30031E7D9 /* Credits.rtf in Resources */,
@@ -327,7 +331,7 @@
 /* Begin PBXTargetDependency section */
 		D5466E8A192159B30031E7D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D5466E63192159B30031E7D9 /* Dulgt */;
+			target = D5466E63192159B30031E7D9 /* Secret Formula */;
 			targetProxy = D5466E89192159B30031E7D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,16 +445,15 @@
 		D5466E96192159B40031E7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
-				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				GCC_PREFIX_HEADER = "Dulgt/Secret Formula-Prefix.pch";
+				INFOPLIST_FILE = "Dulgt/Secret Formula-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dulgt/Libs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Secret Formula";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -458,16 +461,15 @@
 		D5466E97192159B40031E7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
-				INFOPLIST_FILE = "Dulgt/Dulgt-Info.plist";
+				GCC_PREFIX_HEADER = "Dulgt/Secret Formula-Prefix.pch";
+				INFOPLIST_FILE = "Dulgt/Secret Formula-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dulgt/Libs",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Secret Formula";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -487,8 +489,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DulgtTests/DulgtTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DulgtTests/Secret FormulaTests-Info.plist";
+				PRODUCT_NAME = "Secret FormulaTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -505,8 +507,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
-				INFOPLIST_FILE = "DulgtTests/DulgtTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DulgtTests/Secret FormulaTests-Info.plist";
+				PRODUCT_NAME = "Secret FormulaTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -515,7 +517,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Dulgt" */ = {
+		D5466E5F192159B30031E7D9 /* Build configuration list for PBXProject "Secret Formula" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5466E93192159B40031E7D9 /* Debug */,
@@ -524,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Dulgt" */ = {
+		D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Secret Formula" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5466E96192159B40031E7D9 /* Debug */,
@@ -533,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "DulgtTests" */ = {
+		D5466E98192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Secret FormulaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5466E99192159B40031E7D9 /* Debug */,

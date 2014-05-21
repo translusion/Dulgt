@@ -27,6 +27,21 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
     return digestdata;
 }
 
+@implementation TLLogin
+
+- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target length:(int)length
+{
+    self = [super init];
+    if (self) {
+        _username = uname;
+        _target = target;
+        _length = length;
+    }
+    return self;
+}
+
+@end
+
 @implementation TLPasswordGenerator {
     int _N, _r, _p;
 }
@@ -69,7 +84,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
                                _masterpassword,
                                _pepper,
                                _series];
-
+    
     NSUInteger dklen = b64_decode_len(_length)+1;
     NSString *derivepassword = [self derivePasswordFrom:finalpassword salt:_target dklen:dklen];
     if (derivepassword == nil)

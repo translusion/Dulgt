@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5466E63192159B30031E7D9"
                BuildableName = "Dulgt.app"
-               BlueprintName = "Dulgt"
-               ReferencedContainer = "container:Dulgt.xcodeproj">
+               BlueprintName = "Secret Formula"
+               ReferencedContainer = "container:Secret Formula.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5466E84192159B30031E7D9"
                BuildableName = "DulgtTests.xctest"
-               BlueprintName = "DulgtTests"
-               ReferencedContainer = "container:Dulgt.xcodeproj">
+               BlueprintName = "Secret FormulaTests"
+               ReferencedContainer = "container:Secret Formula.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
             BuildableName = "Dulgt.app"
-            BlueprintName = "Dulgt"
-            ReferencedContainer = "container:Dulgt.xcodeproj">
+            BlueprintName = "Secret Formula"
+            ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
             BuildableName = "Dulgt.app"
-            BlueprintName = "Dulgt"
-            ReferencedContainer = "container:Dulgt.xcodeproj">
+            BlueprintName = "Secret Formula"
+            ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
             BuildableName = "Dulgt.app"
-            BlueprintName = "Dulgt"
-            ReferencedContainer = "container:Dulgt.xcodeproj">
+            BlueprintName = "Secret Formula"
+            ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
