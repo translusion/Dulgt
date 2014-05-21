@@ -29,15 +29,19 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 
 @implementation TLLogin
 
-- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target length:(int)length
+- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target password:(NSString *)password;
 {
     self = [super init];
     if (self) {
         _username = uname;
         _target = target;
-        _length = length;
+        _password = password;
     }
     return self;
+}
+
+- (int)length {
+    return (int)_password.length;
 }
 
 @end
@@ -87,7 +91,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 }
 
 
-- (NSString *)derivedPassword {
+- (TLLogin *)derivedPassword {
 
     NSString *finalpassword = [NSString stringWithFormat:@"%@ %@ %@ %d",
                                _username,
@@ -100,7 +104,8 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
     if (derivepassword == nil)
         return nil;
     NSString *result = [derivepassword substringToIndex:_length];
-    return result;
+    TLLogin *login = [[TLLogin alloc] initWithUserName:_username target:_target password:result];
+    return login;
 }
 
 /*

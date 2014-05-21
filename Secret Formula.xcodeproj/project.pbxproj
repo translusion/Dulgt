@@ -485,14 +485,14 @@
 		D5466E99192159B40031E7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dulgt.app/Contents/MacOS/Dulgt";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Secret Formula.app/Contents/MacOS/Secret Formula";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				GCC_PREFIX_HEADER = "Dulgt/Secret Formula-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -507,14 +507,14 @@
 		D5466E9A192159B40031E7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dulgt.app/Contents/MacOS/Dulgt";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Secret Formula.app/Contents/MacOS/Secret Formula";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dulgt/Dulgt-Prefix.pch";
+				GCC_PREFIX_HEADER = "Dulgt/Secret Formula-Prefix.pch";
 				INFOPLIST_FILE = "DulgtTests/Secret FormulaTests-Info.plist";
 				PRODUCT_NAME = "Secret FormulaTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";

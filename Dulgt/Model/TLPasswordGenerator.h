@@ -11,9 +11,15 @@
 NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen);
 
 @interface TLLogin : NSObject
+- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target password:(NSString *)password;
 @property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, copy, readonly) NSString *target;
+@property (nonatomic, copy, readonly) NSString *password;
 @property (nonatomic, assign, readonly) int length;
+
+/** Base64 encoded hash of password which can be stored to later verify password correctness */
+@property (nonatomic, copy, readonly) NSString *fingerprint;
+
 @end
 
 
@@ -42,10 +48,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 @property (nonatomic, assign) int length;
 
 /** Password generated for given target, username and master password */
-@property (nonatomic, copy, readonly) NSString *derivedPassword;
-
-/** Base64 encoded hash of password which can be stored to later verify password correctness */
-@property (nonatomic, copy, readonly) NSString *fingerprint;
+- (TLLogin *)derivedPassword;
 
 - (int)minLength;
 

@@ -100,12 +100,12 @@
     _model.username = _login.stringValue;
     _model.target = _target.stringValue;
     
-    NSString *passwd = [_model derivedPassword];
-    if (passwd) {
-        [self.derivedPassword setStringValue: passwd];
+    TLLogin *login = [_model derivedPassword];
+    if (login) {
+        [self.derivedPassword setStringValue: login.password];
         NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
         [pasteboard clearContents];
-        NSArray *objectsToCopy = @[passwd];
+        NSArray *objectsToCopy = @[login.password];
         [pasteboard writeObjects:objectsToCopy];
     }
 }

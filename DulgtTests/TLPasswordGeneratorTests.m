@@ -118,8 +118,8 @@ static NSArray *expectedScryptOutput() {
     
     for (int i = 1; i <= 16; ++i) {
         generator.length = i;
-        NSString *passwd = [generator derivedPassword];
-        XCTAssertEqual(generator.length, passwd.length, @"Generated password should be as long as we specified");
+        TLLogin *login = [generator derivedPassword];
+        XCTAssertEqual(generator.length, login.password.length, @"Generated password should be as long as we specified");
     }
 }
 
