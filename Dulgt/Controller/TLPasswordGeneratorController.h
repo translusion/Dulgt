@@ -11,4 +11,9 @@
 
 @interface TLPasswordGeneratorController : NSWindowController
 @property (nonatomic, strong) TLPasswordGenerator *model;
+@property (nonatomic, assign) BOOL secretEncrypted;
+@property (nonatomic, assign) BOOL showSecret;
+// Received secret from another app rather than keyboard.
+// for safety reasons it is encrypted with master password when sent
+- (void)setEncryptedSecret:(NSString *)encryptedSecret;
 @end

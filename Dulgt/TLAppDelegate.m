@@ -15,14 +15,23 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    _passwdGeneratorController = [[TLPasswordGeneratorController alloc] init];
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleAppleEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 
+    
+    _passwdGeneratorController = [[TLPasswordGeneratorController alloc] init];
     [[_passwdGeneratorController window] makeKeyAndOrderFront:self];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
     return YES;
+}
+
+- (void)handleAppleEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+    NSString *urlString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSString *encryptedSecret = url.host;
+    [_passwdGeneratorController setEncryptedSecret:encryptedSecret];
 }
 
 @end

@@ -113,7 +113,7 @@ static NSArray *expectedScryptOutput() {
     generator.username = @"myself";
     generator.masterpassword = @"youwouldneverguess";
     generator.target = @"apple";
-    generator.pepper = @"notellin";
+    [generator setPepper:@"notellin" encrypted:NO];
     generator.series = 0;
     
     for (int i = 1; i <= 16; ++i) {

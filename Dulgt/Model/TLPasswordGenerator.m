@@ -44,6 +44,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 
 @implementation TLPasswordGenerator {
     int _N, _r, _p;
+    NSString *_pepper;
 }
 
 - (instancetype)init
@@ -64,6 +65,10 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
         _length = 8;
     }
     return self;
+}
+
+- (void) setPepper:(NSString *)pepper encrypted:(BOOL)isEncrypted {
+    _pepper = pepper; // Handle decryption
 }
 
 /** Returns nil if failed to generate password */

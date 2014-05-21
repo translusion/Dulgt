@@ -35,6 +35,8 @@
     self = [super initWithWindowNibName:@"TLPasswordGeneratorWindow"];
     if (self) {
         _model = [[TLPasswordGenerator alloc] init];
+        _secretEncrypted = NO;
+        _showSecret = NO;
     }
     return self;
 }
@@ -45,13 +47,18 @@
     _seriesStepper.integerValue = _model.series;
     _seriesField.integerValue   = _model.series;
     
+    [_secret bind:@"showsText"
+         toObject:self
+      withKeyPath:@"showSecret"
+          options:nil];
+    
     [self changePasswordAndSecret:nil];
 }
 
 - (void)secretsSheetDidEnd:(NSWindow *)sheet
          returnCode:(NSInteger)returnCode
         contextInfo:(void *)contextInfo {
-    _model.pepper = _secret.stringValue;
+    [_model setPepper:_secret.stringValue encrypted:_secretEncrypted];
     _model.masterpassword = _masterpassword.stringValue;
     
     // want to make sure we are not accidentally leaving secrets for
@@ -118,6 +125,24 @@
         NSArray *objectsToCopy = @[passwd];
         [pasteboard writeObjects:objectsToCopy];
     }
+}
+
+- (void)setEncryptedSecret:(NSString *)encryptedSecret {
+    NSWindow *attached = self.window.attachedSheet;
+    if (attached != nil) {
+        if (attached == _masterpasswordWindow) {
+            NSString *passwd = _singleMasterpassword.stringValue;
+            [self endPasswordWindow:nil];
+            [self changePasswordAndSecret:nil];
+            _masterpassword.stringValue = passwd;
+        }
+    }
+    else {
+        [self changePasswordAndSecret:nil];
+    }
+    _secret.stringValue = encryptedSecret;
+    [self setValue:@YES forKey:@"showSecret"];
+    [self setValue:@YES forKey:@"secretEncrypted"];
 }
 
 - (void)dealloc
