@@ -71,6 +71,11 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
     _pepper = pepper; // Handle decryption
 }
 
+- (int)minLength {
+    return 4; // should not have smaller passwords than this
+}
+
+
 /** Returns nil if failed to generate password */
 - (NSString *)derivePasswordFrom:(NSString *)passwd salt:(NSString *)salt dklen:(NSUInteger)dklen {
     NSData *digestdata = generatePassword(passwd, salt, _N, _r, _p, dklen);
@@ -96,6 +101,21 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
         return nil;
     NSString *result = [derivepassword substringToIndex:_length];
     return result;
+}
+
+/*
+ If we don't have this method implemented then an exception will be raised each
+ time we erase all the text in a number textfield bound to this model.
+ 
+ Look at: http://stackoverflow.com/questions/9102884/setnilvalueforkey-error
+ */
+- (void)setNilValueForKey:(NSString*)key {
+    if ([key isEqualToString:@"length"])
+        self.length = self.minLength;
+    else  if ([key isEqualToString:@"series"])
+        self.series = 0;
+    else
+        [super setNilValueForKey:key];
 }
 
 @end

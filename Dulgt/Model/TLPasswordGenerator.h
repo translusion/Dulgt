@@ -47,5 +47,6 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 /** Base64 encoded hash of password which can be stored to later verify password correctness */
 @property (nonatomic, copy, readonly) NSString *fingerprint;
 
+- (int)minLength;
 
 @end
