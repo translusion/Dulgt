@@ -9,16 +9,21 @@
 #import <Foundation/Foundation.h>
 
 NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int p, NSUInteger dklen);
+NSData *fingerprint(NSString *passstr, int N, int r, int p); // Output in standard Modular Crypt Format, which contains algorithm, salt and hash
+BOOL doesPasswordMatchFingerprint(NSString *passwd, NSData *fingerprint);
 
 @interface TLLogin : NSObject
-- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target password:(NSString *)password;
+- (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target password:(NSString *)password fingerprint:(NSData *)fingerprint;
 @property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, copy, readonly) NSString *target;
 @property (nonatomic, copy, readonly) NSString *password;
 @property (nonatomic, assign, readonly) int length;
 
 /** Base64 encoded hash of password which can be stored to later verify password correctness */
-@property (nonatomic, copy, readonly) NSString *fingerprint;
+@property (nonatomic, copy, readonly) NSData *fingerprint;
+
+- (NSString *)colonSeparatedHeader;
+- (NSString *)colonSeparatedData;
 
 @end
 
@@ -27,7 +32,7 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
 
 - (instancetype)init;
 - (instancetype)initWithN:(int)N r:(int)r p:(int)p;
-
+- (void)changeCostParamN:(int)N r:(int)r p:(int)p;
 - (NSString *)derivePasswordFrom:(NSString *)passwd salt:(NSString *)salt dklen:(NSUInteger)dklen;
 
 @property (nonatomic, copy) NSString *username;

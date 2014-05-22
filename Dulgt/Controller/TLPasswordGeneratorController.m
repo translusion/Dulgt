@@ -32,7 +32,10 @@
 {
     self = [super initWithWindowNibName:@"TLPasswordGeneratorWindow"];
     if (self) {
-        _model = [[TLPasswordGenerator alloc] init];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        _model = [[TLPasswordGenerator alloc] initWithN:(int)[defaults integerForKey:@"N"]
+                                                      r:(int)[defaults integerForKey:@"r"]
+                                                      p:(int)[defaults integerForKey:@"p"]];
         _secretEncrypted = NO;
         _showSecret = NO;
         _logins = [[NSMutableArray alloc] initWithCapacity:20];
@@ -102,15 +105,36 @@
 - (IBAction)generatePassword:(id)sender {
     _model.username = _login.stringValue;
     _model.target = _target.stringValue;
+   
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [_model changeCostParamN:(int)[defaults integerForKey:@"N"]
+                           r:(int)[defaults integerForKey:@"r"]
+                           p:(int)[defaults integerForKey:@"p"]];
     
     TLLogin *login = [_model derivedPassword];
     if (login) {
         [_logins addObject:login];
+
+        // updated UI
         [self.derivedPassword setStringValue: login.password];
+        
+        // Put password on clipboard
         NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
         [pasteboard clearContents];
         NSArray *objectsToCopy = @[login.password];
         [pasteboard writeObjects:objectsToCopy];
+        
+        // cache generated password to file
+        NSString *cachefilepath = [defaults stringForKey:@"passwordfilepath"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        if (![fm fileExistsAtPath:cachefilepath]) {
+            [fm createFileAtPath:cachefilepath contents:[[login colonSeparatedHeader] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+        }
+        
+        NSFileHandle *output = [NSFileHandle fileHandleForUpdatingAtPath:cachefilepath];
+        [output seekToEndOfFile];
+        [output writeData:[[login colonSeparatedData] dataUsingEncoding:NSUTF8StringEncoding]];
+        [output closeFile];
     }
 }
 

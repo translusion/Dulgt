@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5466E63192159B30031E7D9"
-               BuildableName = "Dulgt.app"
+               BuildableName = "Secret Formula.app"
                BlueprintName = "Secret Formula"
                ReferencedContainer = "container:Secret Formula.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5466E84192159B30031E7D9"
-               BuildableName = "DulgtTests.xctest"
+               BuildableName = "Secret FormulaTests.xctest"
                BlueprintName = "Secret FormulaTests"
                ReferencedContainer = "container:Secret Formula.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
-            BuildableName = "Dulgt.app"
+            BuildableName = "Secret Formula.app"
             BlueprintName = "Secret Formula"
             ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
-            BuildableName = "Dulgt.app"
+            BuildableName = "Secret Formula.app"
             BlueprintName = "Secret Formula"
             ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5466E63192159B30031E7D9"
-            BuildableName = "Dulgt.app"
+            BuildableName = "Secret Formula.app"
             BlueprintName = "Secret Formula"
             ReferencedContainer = "container:Secret Formula.xcodeproj">
          </BuildableReference>

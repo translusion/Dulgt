@@ -8,9 +8,25 @@
 
 #import "TLAppDelegate.h"
 #import "TLPasswordGeneratorController.h"
+#import "TLPreferenceController.h"
+#import "libscrypt.h"
 
 @implementation TLAppDelegate {
     TLPasswordGeneratorController *_passwdGeneratorController;
+    TLPreferenceController *_preferenceController;
+}
+
++ (void)initialize {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *passworfilepath = [paths firstObject];
+    passworfilepath = [passworfilepath stringByAppendingPathComponent:@"cachedpasswords"];
+    NSDictionary *defaults = @{
+                               @"passwordfilepath": passworfilepath,
+                               // scrypt algorithm parameters
+                               @"N": @SCRYPT_N,
+                               @"r": @SCRYPT_r,
+                               @"p": @SCRYPT_p};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -34,4 +50,10 @@
     [_passwdGeneratorController setEncryptedSecret:encryptedSecret];
 }
 
+- (IBAction)showPreferencePanel:(id)sender {
+    if (!_preferenceController) {
+        _preferenceController = [[TLPreferenceController alloc] init];
+    }
+    [_preferenceController showWindow:self];
+}
 @end
