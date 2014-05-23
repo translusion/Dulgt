@@ -25,7 +25,8 @@
 @end
 
 @implementation TLPasswordGeneratorController {
-    NSMutableArray *_logins;
+    NSMutableSet *_logins;
+    NSMutableOrderedSet *_usernames, *_targets;
 }
 
 - (instancetype)init
@@ -38,7 +39,9 @@
                                                       p:(int)[defaults integerForKey:@"p"]];
         _secretEncrypted = NO;
         _showSecret = NO;
-        _logins = [[NSMutableArray alloc] initWithCapacity:20];
+        _logins = [[NSMutableSet alloc] initWithCapacity:20];
+        _usernames = [[NSMutableOrderedSet alloc] initWithCapacity:5];
+        _targets = [[NSMutableOrderedSet alloc] initWithCapacity:20];
     }
     return self;
 }
@@ -113,7 +116,19 @@
     
     TLLogin *login = [_model derivedPassword];
     if (login) {
-        [_logins addObject:login];
+        if (![_logins containsObject:login]) {
+            [_logins addObject:login];
+            
+            if (![_usernames containsObject:login.username]) {
+                [_usernames addObject:login.username];
+                [_login addItemWithObjectValue:login.username];
+            }
+            
+            if (![_targets containsObject:login.target]) {
+                [_targets addObject:login.target];
+                [_target addItemWithObjectValue:login.target];
+            }
+        }
 
         // updated UI
         [self.derivedPassword setStringValue: login.password];
@@ -135,6 +150,24 @@
         [output seekToEndOfFile];
         [output writeData:[[login colonSeparatedData] dataUsingEncoding:NSUTF8StringEncoding]];
         [output closeFile];
+    }
+}
+
+- (IBAction)updateTargetList:(id)sender {
+    [_target setStringValue:@""];
+    
+    NSPredicate *namePred = [NSPredicate predicateWithFormat:@"username LIKE %@", [_login stringValue]];
+    
+    NSMutableArray *targets = [[NSMutableArray alloc] initWithCapacity:20];
+    for (TLLogin *login in [_logins filteredSetUsingPredicate:namePred]) {
+        [targets addObject:login.target];
+    }
+    
+    [_target removeAllItems];
+    [_target addItemsWithObjectValues:targets];
+    
+    if (targets.count == 1) {
+        _target.stringValue = targets.firstObject;
     }
 }
 
