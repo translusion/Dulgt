@@ -33,8 +33,9 @@ NSData *generatePassword(NSString *passstr, NSString *saltstr, int N, int r, int
  */
 NSData *fingerprint(NSString *passstr, int N, int r, int p) {
     NSData *passdata = [passstr dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableData *fingerprintdata = [NSMutableData dataWithLength:SCRYPT_MCF_LEN];
-    int status = libscrypt_hash([fingerprintdata mutableBytes], (char *)[passdata bytes], N, r, p);
+    char outbuffer[SCRYPT_MCF_LEN];
+    int status = libscrypt_hash(outbuffer, (char *)[passdata bytes], N, r, p);
+    NSData *fingerprintdata = [NSData dataWithBytes:outbuffer length:strnlen(outbuffer, SCRYPT_MCF_LEN)];
 
     if (status != 1)
         return nil;
