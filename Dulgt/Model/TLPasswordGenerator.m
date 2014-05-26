@@ -65,12 +65,35 @@ BOOL doesPasswordMatchFingerprint(NSString *passwd, NSData *fingerprint) {
         _target = target;
         _password = password;
         _fingerprint = fingerprint;
+        _length = (int)password.length;
     }
     return self;
 }
 
-- (int)length {
-    return (int)_password.length;
+- (instancetype)initFromScanner:(NSScanner *)scanner
+{
+    self = [self initWithUserName:@"" target:@"" password:@"" fingerprint:nil];
+    if (self) {
+        NSString *username = @"";
+        NSString *target = @"";
+        NSString *mfc = @"";
+        int length = -1;
+        
+        [scanner scanUpToString:@":" intoString:&username];
+        [scanner scanString:@":" intoString:nil];
+        [scanner scanUpToString:@":" intoString:&target];
+        [scanner scanString:@":" intoString:nil];
+        [scanner scanInt:&length];
+        [scanner scanString:@":" intoString:nil];
+        [scanner scanUpToString:@"\n" intoString:&mfc];
+        [scanner scanString:@"\n" intoString:nil];
+
+        _username = username;
+        _target = target;
+        _fingerprint = [mfc dataUsingEncoding:NSUTF8StringEncoding];
+        _length = length;
+    }
+    return self;
 }
 
 - (NSString *)colonSeparatedHeader {

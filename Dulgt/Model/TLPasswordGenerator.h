@@ -14,6 +14,7 @@ BOOL doesPasswordMatchFingerprint(NSString *passwd, NSData *fingerprint);
 
 @interface TLLogin : NSObject
 - (instancetype)initWithUserName:(NSString *)uname target:(NSString *)target password:(NSString *)password fingerprint:(NSData *)fingerprint;
+- (instancetype)initFromScanner:(NSScanner *)scanner;
 @property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, copy, readonly) NSString *target;
 @property (nonatomic, copy, readonly) NSString *password;
