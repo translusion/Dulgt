@@ -52,8 +52,37 @@
          toObject:self
       withKeyPath:@"showSecret"
           options:nil];
-    
+    [self loadCachedLogins];
     [self changePasswordAndSecret:nil];
+}
+
+- (void)loadCachedLogins {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *cachefilepath = [defaults stringForKey:@"passwordfilepath"];
+    NSError *err = nil;
+    NSString *cachedLogins = [NSString stringWithContentsOfFile:cachefilepath encoding:NSUTF8StringEncoding error:&err];
+    if (err) {
+        NSAlert *alert = [NSAlert alertWithError:err];
+        alert.alertStyle = NSWarningAlertStyle;
+        alert.informativeText = alert.messageText;
+        alert.messageText = @"Unable to read info about usernames and targets used for your previously generated passwords.";
+        [alert runModal];
+    }
+    else {
+        NSScanner *scanner = [[NSScanner alloc] initWithString:cachedLogins];
+        [scanner scanUpToString:@"\n" intoString:nil];
+        [scanner scanString:@"\n" intoString:nil];
+        while (![scanner isAtEnd]) {
+            TLLogin *login = [[TLLogin alloc] initFromScanner:scanner];
+            
+            if (![_usernames containsObject:login.username]) {
+                [_usernames addObject:login.username];
+                [_login addItemWithObjectValue:login.username];
+            }
+            
+            [_logins addObject:login];
+        }
+    }
 }
 
 - (void)secretsSheetDidEnd:(NSWindow *)sheet
@@ -128,6 +157,18 @@
                 [_targets addObject:login.target];
                 [_target addItemWithObjectValue:login.target];
             }
+            
+            // cache generated password to file
+            NSString *cachefilepath = [defaults stringForKey:@"passwordfilepath"];
+            NSFileManager *fm = [NSFileManager defaultManager];
+            if (![fm fileExistsAtPath:cachefilepath]) {
+                [fm createFileAtPath:cachefilepath contents:[[login colonSeparatedHeader] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
+            }
+            
+            NSFileHandle *output = [NSFileHandle fileHandleForUpdatingAtPath:cachefilepath];
+            [output seekToEndOfFile];
+            [output writeData:[[login colonSeparatedData] dataUsingEncoding:NSUTF8StringEncoding]];
+            [output closeFile];
         }
 
         // updated UI
@@ -138,18 +179,6 @@
         [pasteboard clearContents];
         NSArray *objectsToCopy = @[login.password];
         [pasteboard writeObjects:objectsToCopy];
-        
-        // cache generated password to file
-        NSString *cachefilepath = [defaults stringForKey:@"passwordfilepath"];
-        NSFileManager *fm = [NSFileManager defaultManager];
-        if (![fm fileExistsAtPath:cachefilepath]) {
-            [fm createFileAtPath:cachefilepath contents:[[login colonSeparatedHeader] dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
-        }
-        
-        NSFileHandle *output = [NSFileHandle fileHandleForUpdatingAtPath:cachefilepath];
-        [output seekToEndOfFile];
-        [output writeData:[[login colonSeparatedData] dataUsingEncoding:NSUTF8StringEncoding]];
-        [output closeFile];
     }
 }
 
