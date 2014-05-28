@@ -22,6 +22,9 @@
     passworfilepath = [passworfilepath stringByAppendingPathComponent:@"cachedpasswords"];
     NSDictionary *defaults = @{
                                @"passwordfilepath": passworfilepath,
+                               // default password length. Used to remember users last setting. This is because if user
+                               // likes to always use e.g. 10 for length it is annoying to have to set it to 10 on every startup.
+                               @"lastUsedPasswordLength": @8,
                                // scrypt algorithm parameters
                                @"N": @SCRYPT_N,
                                @"r": @SCRYPT_r,

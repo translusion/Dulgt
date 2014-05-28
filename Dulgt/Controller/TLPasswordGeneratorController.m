@@ -21,6 +21,8 @@
 @property (weak) IBOutlet NSComboBox *login;
 @property (weak) IBOutlet NSComboBox *target;
 @property (weak) IBOutlet NSButton *generateButton;
+@property (weak) IBOutlet NSTextField *passwdLengthField;
+@property (weak) IBOutlet NSSlider *passwdLengthSlider;
 
 @end
 
@@ -52,6 +54,12 @@
          toObject:self
       withKeyPath:@"showSecret"
           options:nil];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int len = (int)[defaults integerForKey:@"lastUsedPasswordLength"];
+    _passwdLengthSlider.integerValue = len;
+    _passwdLengthField.integerValue = len;
+    
     [self loadCachedLogins];
     [self changePasswordAndSecret:nil];
 }
@@ -133,12 +141,36 @@
           contextInfo:NULL];
 }
 
+- (IBAction)passwdLengthChanged:(NSControl *)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:sender.integerValue forKey:@"lastUsedPasswordLength"];
+    _passwdLengthField.integerValue = sender.integerValue;
+}
+
+- (void)controlTextDidChange:(NSNotification *) note {
+    NSTextField *txtField = note.object;
+    if (txtField == _passwdLengthField) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:txtField.integerValue forKey:@"lastUsedPasswordLength"];
+        _passwdLengthSlider.integerValue = txtField.integerValue;
+        
+    }
+}
+
+- (IBAction)finnishedEditingPasswdLength:(NSTextField *)sender {
+    if (sender.integerValue < _model.minLength) {
+        sender.integerValue = _model.minLength;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:sender.integerValue forKey:@"lastUsedPasswordLength"];
+    }
+}
 
 - (IBAction)generatePassword:(id)sender {
     _model.username = _login.stringValue;
     _model.target = _target.stringValue;
-   
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    _model.length = (int)[defaults integerForKey:@"lastUsedPasswordLength"];
     [_model changeCostParamN:(int)[defaults integerForKey:@"N"]
                            r:(int)[defaults integerForKey:@"r"]
                            p:(int)[defaults integerForKey:@"p"]];
