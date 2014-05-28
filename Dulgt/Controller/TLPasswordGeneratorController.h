@@ -9,7 +9,7 @@
 #import <AppKit/AppKit.h>
 @class TLPasswordGenerator;
 
-@interface TLPasswordGeneratorController : NSWindowController
+@interface TLPasswordGeneratorController : NSWindowController <NSToolbarDelegate> 
 @property (nonatomic, strong) TLPasswordGenerator *model;
 @property (nonatomic, assign) BOOL secretEncrypted;
 @property (nonatomic, assign) BOOL showSecret;

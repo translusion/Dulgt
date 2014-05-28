@@ -60,8 +60,66 @@
     _passwdLengthSlider.integerValue = len;
     _passwdLengthField.integerValue = len;
     
+    [self setupToolbar];
+    
     [self loadCachedLogins];
     [self changePasswordAndSecret:nil];
+}
+
+#pragma mark Toolbar
+
+- (void) setupToolbar {
+    NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier: @"MainToolBar"];
+    
+    [toolbar setAllowsUserCustomization: NO];
+    [toolbar setDisplayMode: NSToolbarDisplayModeIconAndLabel];
+    
+    [toolbar setDelegate: self];
+    [self.window setToolbar: toolbar];
+}
+
+// Delegate methods
+- (NSToolbarItem *) toolbar: (NSToolbar *)toolbar itemForItemIdentifier: (NSString *) itemIdent willBeInsertedIntoToolbar:(BOOL) willBeInserted {
+    NSToolbarItem *toolbarItem = nil;
+    
+    if ([itemIdent isEqual: @"ArchivedLogins"]) {
+        toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier: itemIdent];
+        
+        [toolbarItem setLabel: @"Archived Logins"];
+        
+        [toolbarItem setToolTip: @"Show logins for previously generated passwords"];
+        [toolbarItem setImage: [NSImage imageNamed: @"ArchivedLogins"]];
+        
+        [toolbarItem setTarget: self];
+        [toolbarItem setAction: @selector(showArchivedLogins:)];
+    } else if([itemIdent isEqual: @"LockSafe"]) {
+        toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier: itemIdent];
+        
+        [toolbarItem setLabel: @"Lock"];
+        
+        [toolbarItem setToolTip: @"Lock Window, requiring memory secret to open again"];
+        [toolbarItem setImage: [NSImage imageNamed: @"LockSafe"]];
+        
+        [toolbarItem setTarget: self];
+        [toolbarItem setAction: @selector(changePassword:)];
+    } else {
+        toolbarItem = nil;
+    }
+    return toolbarItem;
+}
+
+- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar {
+    return @[@"LockSafe"];
+}
+
+- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar {
+    return @[@"LockSafe", @"ArchivedLogins"];
+}
+
+#pragma mark -
+
+- (void)showArchivedLogins:(id)sender {
+    NSLog(@"show logins");
 }
 
 - (void)loadCachedLogins {
