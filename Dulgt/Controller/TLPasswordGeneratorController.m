@@ -59,6 +59,9 @@
     int len = (int)[defaults integerForKey:@"lastUsedPasswordLength"];
     _passwdLengthSlider.integerValue = len;
     _passwdLengthField.integerValue = len;
+   
+    // Makes the print... menu work
+    [self.window makeFirstResponder:self];
     
     [self setupToolbar];
     
@@ -109,14 +112,33 @@
 }
 
 - (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar {
-    return @[@"LockSafe"];
+    return @[@"LockSafe", NSToolbarPrintItemIdentifier];
 }
 
 - (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar {
-    return @[@"LockSafe", @"ArchivedLogins"];
+    return @[@"LockSafe", NSToolbarPrintItemIdentifier, @"ArchivedLogins"];
+}
+
+- (void) toolbarWillAddItem: (NSNotification *) notif {
+    NSToolbarItem *addedItem = [[notif userInfo] objectForKey: @"item"];
+    if ([[addedItem itemIdentifier] isEqual: NSToolbarPrintItemIdentifier]) {
+        [addedItem setLabel:@"Store Paper Secret"];
+        [addedItem setToolTip: @"Print encrypted QR code of papersecret"];
+    }
 }
 
 #pragma mark -
+
+- (void)print:(id)sender {
+    [self printDocument:sender];
+}
+
+- (void) printDocument:(id) sender {
+    NSImageView *view = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 200, 200)];
+    view.image = [NSImage imageNamed: @"LockSafe"];
+    NSPrintOperation *printOperation = [NSPrintOperation printOperationWithView: view];
+    [printOperation runOperationModalForWindow: self.window delegate: nil didRunSelector: NULL contextInfo: NULL];
+}
 
 - (void)showArchivedLogins:(id)sender {
     NSLog(@"show logins");
