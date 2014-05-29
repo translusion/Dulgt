@@ -158,6 +158,11 @@ BOOL doesPasswordMatchFingerprint(NSString *passwd, NSData *fingerprint) {
     _pepper = pepper; // Handle decryption
 }
 
+- (NSString *)encryptedPepper {
+    return _pepper;
+}
+
+
 - (int)minLength {
     return 4; // should not have smaller passwords than this
 }

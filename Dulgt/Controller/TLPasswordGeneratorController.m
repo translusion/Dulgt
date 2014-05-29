@@ -9,6 +9,7 @@
 #import "TLPasswordGeneratorController.h"
 #import "TLPasswordGenerator.h"
 #import "KSPasswordField.h"
+#import "TLPaperBackupController.h"
 
 @interface TLPasswordGeneratorController ()
 @property (weak) IBOutlet NSTextField *derivedPassword;
@@ -29,6 +30,7 @@
 @implementation TLPasswordGeneratorController {
     NSMutableSet *_logins;
     NSMutableOrderedSet *_usernames, *_targets;
+    TLPaperBackupController *_paperBackupController;
 }
 
 - (instancetype)init
@@ -44,6 +46,7 @@
         _logins = [[NSMutableSet alloc] initWithCapacity:20];
         _usernames = [[NSMutableOrderedSet alloc] initWithCapacity:5];
         _targets = [[NSMutableOrderedSet alloc] initWithCapacity:20];
+        _paperBackupController = [[TLPaperBackupController alloc] init];
     }
     return self;
 }
@@ -67,6 +70,8 @@
     
     [self loadCachedLogins];
     [self changePasswordAndSecret:nil];
+    
+    [_paperBackupController showWindow:nil];
 }
 
 #pragma mark Toolbar
@@ -134,8 +139,16 @@
 }
 
 - (void) printDocument:(id) sender {
-    NSImageView *view = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 200, 200)];
-    view.image = [NSImage imageNamed: @"LockSafe"];
+//    NSView *view = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 600)];
+//    MIHQRCodeView *qrview = [[MIHQRCodeView alloc] initWithFrame:NSMakeRect(0, 0, 300, 300)];
+//    qrview.dataValue = [_model.encryptedPepper dataUsingEncoding:NSUTF8StringEncoding];
+//    [view addSubview:qrview];
+//    
+//    NSTextField *heading = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 560, 300, 40)];
+//    heading.stringValue = [NSString stringWithFormat:@"Secret Formula Backup, %@", [NSDate date]];
+//    [view addSubview:heading];
+    _paperBackupController.backupString = _model.encryptedPepper;
+    NSView *view = _paperBackupController.contentView;
     NSPrintOperation *printOperation = [NSPrintOperation printOperationWithView: view];
     [printOperation runOperationModalForWindow: self.window delegate: nil didRunSelector: NULL contextInfo: NULL];
 }

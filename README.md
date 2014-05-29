@@ -22,4 +22,7 @@ The first version of Dulgt will not offer complete password management. So the m
 
 With later version of Dulgt I imagine adding this sort of functionality to Dulgt itself so it will suggest passwords in the browser and store which passwords you have used.
 
+# Overview of Code
+
+This application is really just build around the scrypt cryptographic hashing function. The central class is `TLPasswordGenerator`. There are README.md files in relevant directories for describing what is in there.
 

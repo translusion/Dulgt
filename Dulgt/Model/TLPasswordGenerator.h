@@ -47,6 +47,8 @@ BOOL doesPasswordMatchFingerprint(NSString *passwd, NSData *fingerprint);
 /** A long secret which is time consuming to enter or possibly impossible to remember. Something one keeps written down e.g.*/
 - (void) setPepper:(NSString *)pepper encrypted:(BOOL)isEncrypted;
 
+- (NSString *)encryptedPepper;
+
 /** Defaults to 0. Increment by one when service requires you to make new password */
 @property (nonatomic, assign) int series;
 

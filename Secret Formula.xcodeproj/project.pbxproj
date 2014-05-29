@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64EBCEE9A442474C922824F3 /* libPods-Secret Formula.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE819A386B3461598453724 /* libPods-Secret Formula.a */; };
+		D503E7F61937650F00F0B7B6 /* MIHQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D503E7F51937650F00F0B7B6 /* MIHQRCodeView.m */; };
+		D503E7FA1937695600F0B7B6 /* TLPaperBackupController.m in Sources */ = {isa = PBXBuildFile; fileRef = D503E7F81937695600F0B7B6 /* TLPaperBackupController.m */; };
+		D503E7FB1937695600F0B7B6 /* TLPaperBackupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D503E7F91937695600F0B7B6 /* TLPaperBackupController.xib */; };
+		D503E7FD1937A94B00F0B7B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D503E7FC1937A94B00F0B7B6 /* QuartzCore.framework */; };
 		D50C724E192909A0001D3B15 /* TLPasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */; };
 		D50C7251192957D3001D3B15 /* TLPasswordGeneratorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */; };
 		D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5466E67192159B30031E7D9 /* Cocoa.framework */; };
@@ -44,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F4E2A211254CE88500422A /* Pods-Secret Formula.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Secret Formula.xcconfig"; path = "Pods/Pods-Secret Formula.xcconfig"; sourceTree = "<group>"; };
+		BCE819A386B3461598453724 /* libPods-Secret Formula.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Secret Formula.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D503E7F41937650F00F0B7B6 /* MIHQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIHQRCodeView.h; path = Libs/MIHQRCodeView.h; sourceTree = "<group>"; };
+		D503E7F51937650F00F0B7B6 /* MIHQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIHQRCodeView.m; path = Libs/MIHQRCodeView.m; sourceTree = "<group>"; };
+		D503E7F71937695600F0B7B6 /* TLPaperBackupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPaperBackupController.h; path = Controller/TLPaperBackupController.h; sourceTree = "<group>"; };
+		D503E7F81937695600F0B7B6 /* TLPaperBackupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPaperBackupController.m; path = Controller/TLPaperBackupController.m; sourceTree = "<group>"; };
+		D503E7F91937695600F0B7B6 /* TLPaperBackupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TLPaperBackupController.xib; path = Controller/TLPaperBackupController.xib; sourceTree = "<group>"; };
+		D503E7FC1937A94B00F0B7B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D50C724C192909A0001D3B15 /* TLPasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLPasswordGeneratorController.h; path = Controller/TLPasswordGeneratorController.h; sourceTree = "<group>"; };
 		D50C724D192909A0001D3B15 /* TLPasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLPasswordGeneratorController.m; path = Controller/TLPasswordGeneratorController.m; sourceTree = "<group>"; };
 		D50C7250192957D3001D3B15 /* TLPasswordGeneratorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLPasswordGeneratorWindow.xib; sourceTree = "<group>"; };
@@ -88,8 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D503E7FD1937A94B00F0B7B6 /* QuartzCore.framework in Frameworks */,
 				D5466EA519216E500031E7D9 /* libscrypt.a in Frameworks */,
 				D5466E68192159B30031E7D9 /* Cocoa.framework in Frameworks */,
+				64EBCEE9A442474C922824F3 /* libPods-Secret Formula.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +128,9 @@
 				D5C32ECE192E87BB006A38CA /* TLPreferenceController.h */,
 				D5C32ECF192E87BB006A38CA /* TLPreferenceController.m */,
 				D5C32ED0192E87BB006A38CA /* TLPreferenceController.xib */,
+				D503E7F71937695600F0B7B6 /* TLPaperBackupController.h */,
+				D503E7F81937695600F0B7B6 /* TLPaperBackupController.m */,
+				D503E7F91937695600F0B7B6 /* TLPaperBackupController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -129,6 +147,7 @@
 				D5466E8B192159B30031E7D9 /* DulgtTests */,
 				D5466E66192159B30031E7D9 /* Frameworks */,
 				D5466E65192159B30031E7D9 /* Products */,
+				00F4E2A211254CE88500422A /* Pods-Secret Formula.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +163,11 @@
 		D5466E66192159B30031E7D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D503E7FC1937A94B00F0B7B6 /* QuartzCore.framework */,
 				D5466E67192159B30031E7D9 /* Cocoa.framework */,
 				D5466E86192159B30031E7D9 /* XCTest.framework */,
 				D5466E69192159B30031E7D9 /* Other Frameworks */,
+				BCE819A386B3461598453724 /* libPods-Secret Formula.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +241,8 @@
 		D5466E9F19216DC40031E7D9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D503E7F41937650F00F0B7B6 /* MIHQRCodeView.h */,
+				D503E7F51937650F00F0B7B6 /* MIHQRCodeView.m */,
 				D5B9A72D192BE5BA003F73D4 /* KSPasswordField.h */,
 				D5B9A72E192BE5BA003F73D4 /* KSPasswordField.m */,
 				D5466EA219216E500031E7D9 /* libscrypt.a */,
@@ -235,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5466E95192159B40031E7D9 /* Build configuration list for PBXNativeTarget "Secret Formula" */;
 			buildPhases = (
+				71443B70547049DFA470A582 /* Check Pods Manifest.lock */,
 				D5466E60192159B30031E7D9 /* Sources */,
 				D5466E61192159B30031E7D9 /* Frameworks */,
 				D5466E62192159B30031E7D9 /* Resources */,
+				ED7B440C3CF64D2C8C247D38 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +340,7 @@
 				D5C32ED2192E87BB006A38CA /* TLPreferenceController.xib in Resources */,
 				D5466E78192159B30031E7D9 /* Credits.rtf in Resources */,
 				D50C7251192957D3001D3B15 /* TLPasswordGeneratorWindow.xib in Resources */,
+				D503E7FB1937695600F0B7B6 /* TLPaperBackupController.xib in Resources */,
 				D5466E7E192159B30031E7D9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +355,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71443B70547049DFA470A582 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED7B440C3CF64D2C8C247D38 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Secret Formula-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5466E60192159B30031E7D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,7 +397,9 @@
 				D5466E7B192159B30031E7D9 /* TLAppDelegate.m in Sources */,
 				D5B9A72F192BE5BA003F73D4 /* KSPasswordField.m in Sources */,
 				D5466E74192159B30031E7D9 /* main.m in Sources */,
+				D503E7F61937650F00F0B7B6 /* MIHQRCodeView.m in Sources */,
 				D5C32ED1192E87BB006A38CA /* TLPreferenceController.m in Sources */,
+				D503E7FA1937695600F0B7B6 /* TLPaperBackupController.m in Sources */,
 				D5466E9D19215A6C0031E7D9 /* TLPasswordGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +531,7 @@
 		};
 		D5466E96192159B40031E7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F4E2A211254CE88500422A /* Pods-Secret Formula.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -486,6 +548,7 @@
 		};
 		D5466E97192159B40031E7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F4E2A211254CE88500422A /* Pods-Secret Formula.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

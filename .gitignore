@@ -1,3 +1,4 @@
 *.xcodeproj/project.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/erikengheim.xcuserdatad/xcdebugger/
 *.xcodeproj/project.xcworkspace/xcshareddata/
+Pods/*
