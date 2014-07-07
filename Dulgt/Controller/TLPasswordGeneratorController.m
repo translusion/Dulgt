@@ -71,7 +71,7 @@
     [self loadCachedLogins];
     [self changePasswordAndSecret:nil];
     
-    [_paperBackupController showWindow:nil];
+//    [_paperBackupController showWindow:nil];
 }
 
 #pragma mark Toolbar
@@ -150,8 +150,25 @@
     _paperBackupController.backupString = _model.encryptedPepper;
     NSView *view = _paperBackupController.contentView;
     NSPrintOperation *printOperation = [NSPrintOperation printOperationWithView: view];
-    [printOperation runOperationModalForWindow: self.window delegate: nil didRunSelector: NULL contextInfo: NULL];
+//    [printOperation runOperationModalForWindow: self.window delegate: self didRunSelector: @selector(finnishedPrinting) contextInfo: NULL];
+    @try {
+        [printOperation runOperation];
+    }
+    @catch (NSException *e) {
+        NSLog(@"Got exception %@", e);
+    }
+    @catch (id obj) {
+        NSLog(@"Caught obj %@", obj);
+
+    }
+    @finally {
+        NSLog(@"Printing done");
+    }
 }
+
+//- (void)finnishedPrinting {
+//    NSLog(@"Finnished prinint");
+//}
 
 - (void)showArchivedLogins:(id)sender {
     NSLog(@"show logins");
