@@ -147,28 +147,11 @@
 //    NSTextField *heading = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 560, 300, 40)];
 //    heading.stringValue = [NSString stringWithFormat:@"Secret Formula Backup, %@", [NSDate date]];
 //    [view addSubview:heading];
-    _paperBackupController.backupString = _model.encryptedPepper;
     NSView *view = _paperBackupController.contentView;
+    _paperBackupController.backupString = _model.encryptedPepper;
     NSPrintOperation *printOperation = [NSPrintOperation printOperationWithView: view];
-//    [printOperation runOperationModalForWindow: self.window delegate: self didRunSelector: @selector(finnishedPrinting) contextInfo: NULL];
-    @try {
-        [printOperation runOperation];
-    }
-    @catch (NSException *e) {
-        NSLog(@"Got exception %@", e);
-    }
-    @catch (id obj) {
-        NSLog(@"Caught obj %@", obj);
-
-    }
-    @finally {
-        NSLog(@"Printing done");
-    }
+    [printOperation runOperation];
 }
-
-//- (void)finnishedPrinting {
-//    NSLog(@"Finnished prinint");
-//}
 
 - (void)showArchivedLogins:(id)sender {
     NSLog(@"show logins");

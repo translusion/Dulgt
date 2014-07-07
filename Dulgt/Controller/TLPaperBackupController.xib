@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TLPaperBackupController">
@@ -13,22 +14,26 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Backup of Paper Secret" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Backup of Paper Secret" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="563" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="contentRect" x="196" y="240" width="593" height="297"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="563" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="593" height="297"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a24-rW-srQ" customClass="MIHQRCodeView">
-                        <rect key="frame" x="17" y="17" width="212" height="236"/>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a24-rW-srQ" customClass="MIHQRCodeView">
+                        <rect key="frame" x="0.0" y="40" width="230" height="257"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="m3H-vD-74x"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="a24-rW-srQ" secondAttribute="height" multiplier="103:115" id="2Cc-3b-XwO"/>
+                            <constraint firstAttribute="width" constant="230" id="GL1-9g-a9b"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyDown" id="m3H-vD-74x"/>
                     </imageView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pqc-Dn-oc1">
-                        <rect key="frame" x="244" y="214" width="301" height="36"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pqc-Dn-oc1">
+                        <rect key="frame" x="236" y="270" width="301" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Secret Formula Paper Secret" id="BPu-sz-gTt">
                             <font key="font" metaFont="system" size="22"/>
@@ -36,8 +41,8 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-wt-hA6">
-                        <rect key="frame" x="246" y="141" width="299" height="65"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcg-wt-hA6">
+                        <rect key="frame" x="236" y="245" width="82" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="paper secret" id="5JC-v6-eyv">
                             <font key="font" metaFont="system"/>
@@ -46,6 +51,15 @@
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Pqc-Dn-oc1" secondAttribute="trailing" constant="58" id="3QS-GP-Q0g"/>
+                    <constraint firstItem="Pqc-Dn-oc1" firstAttribute="leading" secondItem="lcg-wt-hA6" secondAttribute="leading" id="P8W-1s-730"/>
+                    <constraint firstItem="Pqc-Dn-oc1" firstAttribute="top" secondItem="a24-rW-srQ" secondAttribute="top" id="hbj-y0-4OQ"/>
+                    <constraint firstItem="lcg-wt-hA6" firstAttribute="top" secondItem="Pqc-Dn-oc1" secondAttribute="bottom" constant="8" id="hm0-As-2ei"/>
+                    <constraint firstItem="a24-rW-srQ" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="nLD-dY-axo"/>
+                    <constraint firstItem="a24-rW-srQ" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="pFV-EY-JS2"/>
+                    <constraint firstItem="Pqc-Dn-oc1" firstAttribute="leading" secondItem="a24-rW-srQ" secondAttribute="trailing" constant="8" id="wKs-US-cJp"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
